@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign in Interface</title>
+    <link rel="stylesheet" href="sign_up.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2 class="loggin">Sign up </h2>
+        <form id="sign_up" action="sign_up.php" method="post">
+            <div class="input-group">
+                <input type="text" id="username" name="nusername" placeholder="Enter your username" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" name="npassword" placeholder="Type your password " required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" name="mpassword" placeholder="Confirm your password" required>
+            </div>
+            <button type="submit">sign in </button>
+            <div class="extra-links">
+               <span><h5>already have an account ?</h5></span>
+                <a href="page1.html"> <b>Login </b></a>
+            </div>
+        </form>
+    </div>
+    <script src="sign_up.js"></script>
+</body>
+</html>
