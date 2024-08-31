@@ -1,3 +1,15 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Handle form submission
+
+
+// Get username and password from POST request
+$username = $_POST['username'];
+$password = $_POST['password'];
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
