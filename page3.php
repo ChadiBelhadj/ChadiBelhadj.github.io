@@ -1,40 +1,37 @@
-<?php
-session_start();
-$server = 'localhost';
-$user = 'root';
-$pass = '';
-$dbname = 'project';
-
-// Create connection
-$conn = new mysqli($server, $user, $pass, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Get username and password from POST request
-$username = $_POST['username'];
-$password = $_POST['password'];
-
-// Prepare SQL statement
-$stmt = $conn->prepare("SELECT password FROM user WHERE username=?");
-$stmt->bind_param("s", $username);
-$stmt->execute();
-$stmt->bind_result($stored_password);
-
-if ($stmt->fetch()) {
-    // Verify the password
-    if (password_verify($password, $stored_password)) {
-        echo "Login successful";
-    } else {
-        echo "Invalid password";
-    }
-} else {
-    echo "Invalid username";
-}
-
-// Close statement and connection
-$stmt->close();
-$conn->close();
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Under Construction</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        .message {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #ff9800;
+        }
+        p {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="message">
+        <h1>Site Under Construction</h1>
+        <p>This site is under construction and will be available until <strong>10/09/2024</strong>.</p>
+    </div>
+</body>
+</html>
